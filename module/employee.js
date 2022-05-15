@@ -40,7 +40,7 @@ module.exports.findAndUpdateEmployees = async (req,res,next)=>{
         const mongoResponse = await mongo.selectedDb.collection('employee').findOneAndUpdate(
             {_id : ObjectId(req.params.employeeId) },
             {$set : {...req.body}},
-            {returnNewDocument : true}
+            // {returnNewDocument : true}
             );
         res.send(mongoResponse);
     }
