@@ -1,4 +1,5 @@
 const {MongoClient} = require("mongodb");
+const mongoose = require('mongoose');
 
 module.exports = {
     selectedDb : {},
@@ -11,6 +12,16 @@ module.exports = {
         }
         catch(err){
             console.log(err)
+        }
+    },
+    
+    async connectMongoose(){
+        try{
+            await mongoose.connect(process.env.MONGOOSE_CONNECTION_URL);
+            console.log("connection success");
+        }
+        catch(err){
+            console.log(err);
         }
     }
 }
