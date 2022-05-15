@@ -8,7 +8,7 @@ module.exports = {
         try{
             const client = await MongoClient.connect(process.env.MONGO_DB);
             this.selectedDb = client.db('node_new');
-            console.log(this.selectedDb,'hello');
+            // console.log(this.selectedDb,'hello');
         }
         catch(err){
             console.log(err)

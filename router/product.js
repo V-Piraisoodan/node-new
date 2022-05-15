@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const productModule = require("../module/product");
 
-router.get('/create', productModule.createProduct);
+router.post('/create', productModule.createProduct);
 // router.get('/get/:employeeId', employeeModule.getEmployees); //to get only one employee details
 // router.post('/create', employeeModule.createEmployees);
 // router.put('/update/:employeeId',employeeModule.updateEmployees);
