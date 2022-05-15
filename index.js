@@ -18,7 +18,7 @@ app.use('/',(req,res,next)=>{
 })
 
 app.use(['/employee',"/employeedetails"], employeeRouter);
-app.use('/create',productRouter);
+app.use('/product',productRouter);
 
 
 app.listen(process.env.PORT || 3001);
