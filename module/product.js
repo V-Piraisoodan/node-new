@@ -1,6 +1,6 @@
 const productModel = require ('../Model/product');
 
-exports.postProduct = async (req,res,next)=>{
+exports.createProduct = async (req,res,next)=>{
     const productData = new productModel({...req.body.product});
     try{
         var response = await productData.save();
