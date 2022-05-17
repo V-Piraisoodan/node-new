@@ -13,6 +13,7 @@ mongo.connect();
 mongo.connectMongoose();
 
 app.use('/',(req,res,next)=>{
+    res.send('hi heroku')
     console.log('middleware')
     next();
 })
