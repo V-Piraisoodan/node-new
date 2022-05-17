@@ -12,14 +12,14 @@ app.use(express.json());
 mongo.connect();
 mongo.connectMongoose();
 
+app.use(['/employee',"/employeedetails"], employeeRouter);
+app.use('/product',productRouter);
+
 app.use('/',(req,res,next)=>{
     res.send('hi heroku')
     console.log('middleware')
     next();
 })
-
-app.use(['/employee',"/employeedetails"], employeeRouter);
-app.use('/product',productRouter);
 
 
 app.listen(process.env.PORT || 3001);
